@@ -207,7 +207,7 @@
       </h3>
       <div class="row align-items-center">
         <div class="col-12 d-flex">
-          <span class="price me-2">${{ product.price }}</span>
+          <!-- <span class="price me-2">${{ product.price }}</span> -->
           <span v-if="product.originalPrice" class="price-strike">${{ product.originalPrice }}</span>
         </div>
       </div>
@@ -348,11 +348,8 @@ createApp({
         'Diagnostic Instruments',
         'Hospital Hollowware',
         'Suction Units',
-        'Anaesthesia Products',
         'Sterilizing Equipment',
         'Rehabilitation Aids',
-        'Anatomical Models',
-        'Miscellaneous Products'
       ],
        products: [
   // Orthopedic Implants & Instruments
@@ -387,20 +384,124 @@ createApp({
     description: 'Electric-powered ICU bed with pressure relief system'
   },
   {
-    id: 5,
-    name: 'Overbed Table',
+    id: 6,
+    name: 'Hospital Bed with Mattress',
     category: 'Hospital Furniture',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeHbOcDoeZkEUQCaG8N_GGlUgKZRKnBjrkMw&s',
-    description: 'Height adjustable laminated overbed table'
+    image: 'assets/img/live/bed.jpeg',
+    description: 'Hospital bed with powder-coated frame and included high-density foam mattress for patient comfort'
   },
   {
-    id: 6,
-    name: 'Bedside Locker',
+    id: 35,
+    name: 'Overbed Table (Stainless Steel)',
     category: 'Hospital Furniture',
-    image: 'assets/img/products/bedside-locker.jpg',
-    description: 'Powder-coated locker with drawer and cabinet'
-  },
-
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.27 AM.jpeg',
+    description: 'Stainless steel overbed table with adjustable height and wheels'
+    },
+    {
+      id: 36,
+      name: 'Adjustable Walking Stick (Tripod Cane)',
+      category: 'Hospital Furniture',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.42 AM.jpeg',
+      description: 'Height-adjustable tripod walking stick for enhanced stability and mobility support'
+    },
+    {
+      id: 37,
+      name: 'Adjustable Aluminum Crutch (Pair)',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 11.58.54 AM.jpeg',
+      description: 'Pair of height-adjustable aluminum crutches with padded underarm and hand grips for comfortable mobility support'
+    },
+    {
+      id: 38,
+      name: 'Foldable Wheelchair',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.56 AM.jpeg',
+      description: 'Lightweight foldable wheelchair with footrests and padded armrests for patient mobility'
+    },
+    {
+      id: 39,
+      name: '4-Wheel Rollator Walker',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.43 AM.jpeg',
+      description: 'Foldable 4-wheel rollator walker with seat, basket, and hand brakes for enhanced mobility and support'
+    },
+    {
+      id: 33,
+      name: 'Short Leg Walker Boot',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.09 AM.jpeg',
+      description: 'Below-knee orthopedic walker boot for foot and ankle immobilization and support'
+    },
+    {
+      id: 41,
+      name: 'Adjustable Forearm Crutch',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.48 AM.jpeg',
+      description: 'Height-adjustable aluminum forearm crutch with ergonomic handle and cuff for enhanced mobility support'
+    },
+    {
+      id: 44,
+      name: 'Bandage Suspensory',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.21 AM.jpeg',
+      description: 'Scrotal support for post-surgery or injury; lightweight, soft, and breathable'
+    },
+    {
+      id: 43,
+      name: 'Scrotal Bandage Suspensory',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.21 AM.jpeg',
+      description: 'Scrotal support bandage for post-surgery or injury; lightweight, soft, and breathable'
+    },
+    {
+      id: 42,
+      name: 'Aircast Walker Boot',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.13 AM.jpeg',
+      description: 'Aircast medical walker boot for immobilization and support of foot and ankle injuries'
+    },
+    {
+      id: 34,
+      name: 'Commode Wheelchair',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.54 AM.jpeg',
+      description: 'Foldable commode wheelchair with removable seat for patient mobility and toileting support'
+    },
+    {
+      id: 48,
+      name: '5 Crank Hospital Bed',
+      category: 'Hospital Furniture',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.26 AM.jpeg',
+      description: 'Manual 5 crank hospital bed with adjustable height, backrest, leg rest, and Trendelenburg/Reverse Trendelenburg positions for enhanced patient comfort and care'
+    },
+    {
+      id: 49,
+      name: 'Knee Brace/Support',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.40 AM.jpeg',
+      description: 'Adjustable knee brace/support for joint stabilization and injury recovery'
+    },
+    {
+      id: 50,
+      name: 'Reclining Pediatric Wheelchair',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/chair.jpeg',
+      description: 'Reclining pediatric wheelchair with adjustable headrest, padded armrests, and footrests for enhanced comfort and support'
+    },
+    {
+      id: 47,
+      name: 'Air Mattress',
+      category: 'Hospital Furniture',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.29 AM.jpeg',
+      description: 'Pressure-relief air mattress for hospital beds, designed to prevent bedsores and enhance patient comfort'
+    },
+    {
+      id: 40,
+      name: 'Orthopedic Walker Boot',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.08 AM.jpeg',
+      description: 'Medical orthopedic walker boot for foot and ankle immobilization and support'
+    },
   // Surgical Instruments
   {
     id: 7,
@@ -423,6 +524,20 @@ createApp({
     image: 'assets/img/products/scalpel.jpg',
     description: 'Reusable handle with disposable surgical blades'
   },
+    {
+      id: 46,
+      name: 'Reassembling Walking Cane',
+      category: 'Rehabilitation Aids',
+      image: 'assets/img/live/WhatsApp Image 2025-05-26 at 11.58.55 AM.jpeg',
+      description: 'Walking cane that can be disassembled and reassembled for easy transport and storage'
+    },
+  {
+    id: 45,
+    name: 'Hospital Bed Mattress',
+    category: 'Hospital Furniture',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.25 AM.jpeg',
+    description: 'High-density foam hospital bed mattress with waterproof cover for patient comfort and hygiene'
+    },
 
   // Diagnostic Instruments
   {
@@ -479,21 +594,6 @@ createApp({
     description: 'Foot-operated suction unit for low-resource settings'
   },
 
-  // Anaesthesia Products
-  {
-    id: 17,
-    name: 'Anesthesia Face Mask Set',
-    category: 'Anaesthesia Products',
-    image: 'assets/img/products/anaesthesia-mask.jpg',
-    description: 'Soft-seal anatomical masks in assorted sizes'
-  },
-  {
-    id: 18,
-    name: 'Ambu Bag - Adult',
-    category: 'Anaesthesia Products',
-    image: 'assets/img/products/ambu-bag.jpg',
-    description: 'Manual resuscitator with oxygen reservoir bag'
-  },
 
   // Sterilizing Equipment
   {
@@ -516,48 +616,87 @@ createApp({
     id: 21,
     name: 'Adjustable Aluminum Crutches',
     category: 'Rehabilitation Aids',
-    image: 'assets/img/products/crutches.jpg',
+    image: 'assets/img/live/chair.jpeg',
     description: 'Height-adjustable crutches with ergonomic grip'
   },
   {
     id: 22,
     name: 'Wheelchair - Foldable',
     category: 'Rehabilitation Aids',
-    image: 'assets/img/products/wheelchair.jpg',
+    image: 'assets/img/live/cart.jpeg',
     description: 'Steel-frame wheelchair with collapsible design'
   },
-
-  // Anatomical Models
   {
     id: 23,
-    name: 'Human Skeleton Model - Life Size',
-    category: 'Anatomical Models',
-    image: 'assets/img/products/skeleton-model.jpg',
-    description: 'Full-body model with articulated joints'
+    name: 'Cervical Collar',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/cervicalcollra.jpeg',
+    description: 'Adjustable foam cervical collar for neck support'
   },
   {
     id: 24,
-    name: 'Brain Model - 4 Part',
-    category: 'Anatomical Models',
-    image: 'assets/img/products/brain-model.jpg',
-    description: 'Detachable model showing brain anatomy'
+    name: 'Leg Support',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.48.58 AM.jpeg',
+    description: 'Adjustable orthopedic leg support for injury recovery'
   },
-
-  // Miscellaneous Products
   {
     id: 25,
-    name: 'Medical Waste Bin - Color Coded',
-    category: 'Miscellaneous Products',
-    image: 'assets/img/products/medical-bin.jpg',
-    description: 'Biohazard bins with pedal mechanism'
+    name: 'Neck Support',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.49.49 AM.jpeg',
+    description: 'Soft foam neck support for cervical stabilization'
   },
   {
     id: 26,
-    name: 'Sphygmomanometer - Aneroid',
-    category: 'Miscellaneous Products',
-    image: 'assets/img/products/sphygmomanometer.jpg',
-    description: 'Manual BP measuring instrument with cuff'
-  }
+    name: 'Soft Neck Support',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.49.50 AM.jpeg',
+    description: 'Comfortable soft neck support for gentle cervical stabilization'
+  },
+  {
+    id: 27,
+    name: 'Infrared Massage Hammer',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.49.51 AM.jpeg',
+    description: 'Handheld massager with infrared heat for muscle relaxation'
+  },
+  {
+    id: 28,
+    name: 'Elastic Ankle Wrap',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.49.58 AM.jpeg',
+    description: 'Elastic ankle wrap for support and compression'
+  },
+  {
+    id: 29,
+    name: 'Adjustable Walking Frame',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 11.58.52 AM.jpeg',
+    description: 'Four-legged walking aid with top handles for stability and support'
+  },
+  {
+    id: 30,
+    name: 'Knee Brace',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.30 AM.jpeg',
+    description: 'Adjustable knee brace for joint support and injury recovery'
+  },
+  {
+    id: 31,
+    name: 'Spinal Brace',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.24 AM.jpeg',
+    description: 'BK-058 spinal brace for intra-abdominal pressure and spinal stability'
+  },
+  {
+    id: 32,
+    name: 'Walker Boot',
+    category: 'Rehabilitation Aids',
+    image: 'assets/img/live/WhatsApp Image 2025-05-26 at 10.50.15 AM.jpeg',
+    description: 'Orthopedic walker boot for foot and ankle immobilization'
+  },
+
 ]
 
     }
