@@ -15533,11 +15533,9 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
 }
 .partners-slider li a {
   background: #ffffff;
-  border: 2px solid #E6E8EE;
   padding: 14px 20px;
   text-align: center;
-  height: 77px;
-  border-radius: 10px;
+  height: 200px;
 }
 
 @media (max-width: 767.96px) {
