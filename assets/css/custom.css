@@ -7123,7 +7123,7 @@ th.table-head-days {
 .header .header-nav .logo {
   display: inline-block;
   margin-right: 24px;
-  width: 160px;
+  width: 220px;
 }
 @media (max-width: 1199.96px) {
   .header .header-nav .logo {
@@ -10034,7 +10034,7 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 0;
-  height: 74px;
+  height: 86px;
 }
 @media (max-width: 1199.96px) {
   .header.header-fourteen .header-nav .logo {
