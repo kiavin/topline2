@@ -12538,7 +12538,7 @@ header.inner-header .header-nav .header-navbar-rht li.noti-nav > a i {
 .footer-fourteen.footer-twelve .footer-bottom .social-links {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: start;
 }
 @media (max-width: 767.98px) {
   .footer-fourteen.footer-twelve .footer-bottom .social-links {
@@ -46797,7 +46797,7 @@ ul.benifits-col li i {
 }
 
 .testimonial-img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   margin-right: 24px;
   width: 220px;
   -ms-flex: 0 0 220px;
@@ -46813,7 +46813,7 @@ ul.benifits-col li i {
   }
 }
 .testimonial-img img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   width: 100%;
 }
 
@@ -52290,6 +52290,7 @@ ul li {
   margin-right: 24px;
   flex-shrink: 0;
   border-radius: 10px;
+  max-width: 120px;
 }
 .service-sec-fourteen .service-types .doctor-image img {
   border-radius: 10px;
