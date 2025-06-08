@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="assets/css/feather.css">
 
   <!-- Datetimepicker CSS -->
-  <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+  <!-- <link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css"> -->
 
   <!-- Select2 CSS -->
   <link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
@@ -166,7 +166,9 @@
                 <a href="contact-us.html">Contact Us</a>
               </li>
             </ul>
+             
           </div>
+            <button id="theme-toggle" class="toggle-btn" title="Toggle theme">🌙</button>
         </nav>
       </div>
     </header>
@@ -247,30 +249,6 @@
 
               <!-- Dynamic Product Cards -->
               <div class="row">
-                <!-- <div class="col-md-12 col-lg-4 col-xl-4 product-custom d-flex" 
-     v-for="product in filteredProducts" 
-     :key="product.id">
-  <div class="profile-widget w-100">
-    <div class="doc-img position-relative hover-container">
-      <a :href="`product-description.html?id=${product.id}`">
-        <img class="img-fluid" :alt="product.name" :src="product.image">
-        <div class="img-hover-overlay">
-          <p class="text-white m-0 p-2">{{ product.description }}</p>
-        </div>
-      </a>
-    </div>
-    <div class="pro-content">
-      <h3 class="title">
-        <a :href="`product-description.html?id=${product.id}`">{{ product.name }}</a>
-      </h3>
-      <div class="row align-items-center">
-        <div class="col-12 d-flex">
-          <span v-if="product.originalPrice" class="price-strike">${{ product.originalPrice }}</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
                 <div class="gallery">
                   <div class="gallery-item" v-for="product in filteredProducts" :key="product.id">
                     <img class="img-fluid" :alt="product.name" :src="product.image">
@@ -423,7 +401,8 @@
   </footer>
   <!-- /Footer -->
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
+  <script src="assets/js/theme-script.js"></script>
 
   <script>
     const { createApp } = Vue;
