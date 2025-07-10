@@ -114,6 +114,351 @@
       color: #080808;
       padding: 15px;
     }
+
+    /* Lightbox Modal Styles */
+    .lightbox-modal {
+      display: flex;
+      /* Use flexbox for centering */
+      justify-content: center;
+      /* Center horizontally */
+      align-items: center;
+      /* Center vertically */
+      position: fixed;
+      /* Stay in place */
+      z-index: 9999;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgba(0, 0, 0, 0.8);
+      /* Black w/ opacity */
+      animation: fadeIn 0.3s ease-out;
+      /* Fade in animation */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      /* Centers the modal content */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 90%;
+      /* Max width for content */
+      max-width: 900px;
+      /* Max width for content */
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      /* For positioning close button */
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      /* Space between sections */
+      max-height: 90vh;
+      /* Max height of modal content */
+      overflow-y: auto;
+      /* Scroll if content exceeds max-height */
+      animation: slideInTop 0.3s ease-out;
+      /* Slide in animation */
+    }
+
+    .close-button {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .modal-main-image-container {
+      position: relative;
+      width: 100%;
+      /* Max height to prevent images from being too tall in the modal */
+      max-height: 60vh;
+      /* Adjust as needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #e0e0e0;
+      /* A light background for the image area */
+      border-radius: 5px;
+      overflow: hidden;
+      /* Hide overflow if image is slightly larger than container */
+      background-color: transparent;
+    }
+
+    .modal-main-image {
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      object-fit: contain;
+      /* Ensures the image scales down without cropping */
+    }
+
+    .nav-button {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      outline: none;
+    }
+
+    .prev-button {
+      left: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .next-button {
+      right: 0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .nav-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-thumbnails {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      /* Allow thumbnails to wrap to next line */
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .modal-thumbnails img {
+      width: 80px;
+      /* Thumbnail size */
+      height: auto;
+      /* Thumbnail size */
+      object-fit: contain;
+      /* Crop to fill thumbnail */
+      cursor: pointer;
+      border: 2px solid transparent;
+      border-radius: 4px;
+      transition: border-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .modal-thumbnails img:hover {
+      border-color: #007bff;
+      /* Highlight on hover */
+      transform: scale(1.05);
+    }
+
+    .modal-thumbnails img.active-thumbnail {
+      border-color: #007bff;
+      /* Highlight active thumbnail */
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    .modal-product-info {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .modal-product-info h3 {
+      margin-bottom: 5px;
+      color: #333;
+      font-size: 1.5em;
+    }
+
+    .modal-product-info p {
+      color: #555;
+      line-height: 1.5;
+    }
+
+
+
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInTop {
+      from {
+        transform: translateY(-50px) scale(0.9);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Lightbox Styles */
+    .lightbox-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      overflow: auto;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 28px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .modal-main-image-container {
+      position: relative;
+      max-height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+    }
+
+    .image-wrapper {
+      max-height: 70vh;
+      overflow: auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .modal-main-image {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 24px;
+      padding: 15px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .prev-button {
+      left: 10px;
+    }
+
+    .next-button {
+      right: 10px;
+    }
+
+    .modal-thumbnails {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .modal-thumbnails img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+    }
+
+    .modal-thumbnails img.active-thumbnail {
+      border-color: #007bff;
+    }
+
+    .modal-product-info {
+      margin-top: 15px;
+      text-align: center;
+      max-width: 80vw;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .modal-content {
+        padding: 15px;
+      }
+
+      .modal-main-image-container {
+        background-color: transparent;
+        max-height: 60vh;
+      }
+
+      .image-wrapper {
+        max-height: 60vh;
+      }
+
+      .modal-main-image {
+        max-height: 60vh;
+      }
+    }
+
+    .modal-content {
+
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 85vw;
+      max-height: 85vh;
+      position: relative;
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
   </style>
 
 </head>
@@ -166,7 +511,7 @@
                 <a href="contact-us.html">Contact Us</a>
               </li>
             </ul>
-             
+
           </div>
         </nav>
       </div>
@@ -249,14 +594,38 @@
               <!-- Dynamic Product Cards -->
               <div class="row">
                 <div class="gallery">
-                  <div class="gallery-item" v-for="product in filteredProducts" :key="product.id">
+                  <div class="gallery-item" v-for="product in filteredProducts" :key="product.id"
+                    @click="openModal(product)">
                     <img class="img-fluid" :alt="product.name" :src="product.image">
-                    <div class="gallery-title">{{product.name}}</div>
-                    <div class="gallery-description">{{product.description}}</div>
-
+                    <div class="gallery-title">{{ product.name }}</div>
+                    <div class="gallery-description">{{ product.description }}</div>
                   </div>
                 </div>
+              </div>
 
+              <div class="lightbox-modal" v-if="isModalOpen" @click.self="closeModal">
+                <div class="modal-content">
+                  <span class="close-button" @click="closeModal">&times;</span>
+                  <div class="modal-main-image-container">
+                    <div class="image-wrapper">
+                      <img :src="currentModalImage" :alt="currentProduct.name" class="modal-main-image">
+                    </div>
+                    <button class="nav-button prev-button" @click.stop="prevImage"
+                      v-if="currentProduct.allImages && currentProduct.allImages.length > 1">&#10094;</button>
+                    <button class="nav-button next-button" @click.stop="nextImage"
+                      v-if="currentProduct.allImages && currentProduct.allImages.length > 1">&#10095;</button>
+                  </div>
+                  <div class="modal-thumbnails" v-if="currentProduct.allImages && currentProduct.allImages.length > 1">
+                    <img v-for="(imgSrc, index) in currentProduct.allImages" :key="index" :src="imgSrc"
+                      :alt="currentProduct.name + ' thumbnail ' + (index + 1)"
+                      :class="{ 'active-thumbnail': imgSrc === currentModalImage }"
+                      @click="setModalImage(imgSrc, index)">
+                  </div>
+                  <div class="modal-product-info">
+                    <h3>{{ currentProduct.name }}</h3>
+                    <p>{{ currentProduct.description }}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -402,9 +771,12 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
   <script src="assets/js/theme-script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.4.21/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="assets/js/theme-script.js"></script>
 
   <script>
-    const { createApp } = Vue;
+    const { createApp, ref, computed } = Vue;
 
     createApp({
       data() {
@@ -419,29 +791,232 @@
             'Suction Units',
             'Short Rental & Lease',
             'Rehabilitation Aids',
+            'WhatsApp Images' // Added for dynamic images
           ],
           products: [
+            {
+              "id": 1,
+              "name": "Gel Stirrup Ankle Brace",
+              "category": "Ankle & Foot Supports",
+              "image": "assets/img/whatsapp/img1.jpeg",
+              "description": "Provides firm support and compression for ankle injuries, featuring gel pads for comfort.",
+              "additionalImages": [
+                "assets/img/whatsapp/img8.jpeg",
+                "assets/img/whatsapp/img59.jpeg",
+                "assets/img/whatsapp/img2.jpeg",
+                "assets/img/whatsapp/img3.jpeg"
+              ]
+            },
+            {
+              "id": 6,
+              "name": "Silicone Arch Sole",
+              "category": "Ankle & Foot Supports",
+              "image": "assets/img/whatsapp/img6.jpeg",
+              "description": "Comfortable silicone sole inserts for arch support and foot pain relief.",
+              "additionalImages": [
+                "assets/img/whatsapp/img7.jpeg",
+                "assets/img/whatsapp/img9.jpeg",
+                "assets/img/whatsapp/img10.jpeg",
+                "assets/img/whatsapp/img60.jpeg"
+              ]
+            },
+            {
+              "id": 34,
+              "name": "Walker Boot",
+              "category": "Ankle & Foot Supports",
+              "image": "assets/img/whatsapp/img34.jpeg",
+              "description": "Protective boot for foot and ankle fractures or severe sprains.",
+              "additionalImages": [
+                "assets/img/whatsapp/img35.jpeg",
+                "assets/img/whatsapp/img46.jpeg"
+              ]
+            },
+            {
+              "id": 11,
+              "name": "ROM Knee Brace",
+              "category": "Knee Braces & Supports",
+              "image": "assets/img/whatsapp/img11.jpeg",
+              "description": "Range of Motion (ROM) knee brace for controlled post-operative knee recovery.",
+              "additionalImages": [
+                "assets/img/whatsapp/img18.jpeg",
+                "assets/img/whatsapp/img21.jpeg"
+              ]
+            },
+            {
+              "id": 13,
+              "name": "Breathable Spine Brace",
+              "category": "Spine & Back Supports",
+              "image": "assets/img/whatsapp/img13.jpeg",
+              "description": "Lightweight and breathable support for spinal alignment and back pain relief.",
+              "additionalImages": [
+                "assets/img/whatsapp/img16.jpeg",
+                "assets/img/whatsapp/img24.jpeg"
+              ]
+            },
+            {
+              "id": 17,
+              "name": "Sacro Lumbar Support",
+              "category": "Spine & Back Supports",
+              "image": "assets/img/whatsapp/img17.jpeg",
+              "description": "Designed to support the lower back and sacral region, reducing pain.",
+              "additionalImages": []
+            },
+            {
+              "id": 4,
+              "name": "Rubber Belt Pelvis Belt",
+              "category": "Spine & Back Supports",
+              "image": "assets/img/whatsapp/img4.jpeg",
+              "description": "Offers stability and compression for pelvic region discomfort.",
+              "additionalImages": [
+                "assets/img/whatsapp/img5.jpeg"
+              ]
+            },
+            {
+              "id": 14,
+              "name": "Abdominal Binder",
+              "category": "Abdominal Binders",
+              "image": "assets/img/whatsapp/img14.jpeg",
+              "description": "Provides compression and support to the abdomen, often used post-surgery.",
+              "additionalImages": [
+                "assets/img/whatsapp/img23.jpeg",
+                "assets/img/whatsapp/img47.jpeg",
+                "assets/img/whatsapp/img49.jpeg"
+              ]
+            },
+            {
+              "id": 26,
+              "name": "Cervical Collar",
+              "category": "Neck & Shoulder Supports",
+              "image": "assets/img/whatsapp/img26.jpeg",
+              "description": "Soft cervical collar offering gentle support for neck pain or minor injuries.",
+              "additionalImages": [
+                "assets/img/whatsapp/img28.jpeg"
+              ]
+            },
+            {
+              "id": 29,
+              "name": "Neoprene Shoulder Support",
+              "category": "Neck & Shoulder Supports",
+              "image": "assets/img/whatsapp/img29.jpeg",
+              "description": "Provides compression and warmth to the shoulder, aiding muscle recovery.",
+              "additionalImages": [
+                "assets/img/whatsapp/img31.jpeg"
+              ]
+            },
+            {
+              "id": 32,
+              "name": "Clavicle Support",
+              "category": "Neck & Shoulder Supports",
+              "image": "assets/img/whatsapp/img32.jpeg",
+              "description": "Helps stabilize and align the clavicle (collarbone) after injury.",
+              "additionalImages": []
+            },
+            {
+              "id": 27,
+              "name": "Adult Arm Sling",
+              "category": "Arm & Wrist Supports",
+              "image": "assets/img/whatsapp/img27.jpeg",
+              "description": "Supports and immobilizes an injured arm, shoulder, or wrist for adults.",
+              "additionalImages": [
+                "assets/img/whatsapp/img30.jpeg",
+                "assets/img/whatsapp/img52.jpeg",
+                "assets/img/whatsapp/img55.jpeg",
+                "assets/img/whatsapp/img56.jpeg",
+                "assets/img/whatsapp/img58.jpeg"
+              ]
+            },
+            {
+              "id": 51,
+              "name": "Wrist Support",
+              "category": "Arm & Wrist Supports",
+              "image": "assets/img/whatsapp/img51.jpeg",
+              "description": "Provides mild compression and support for wrist sprains or overuse.",
+              "additionalImages": [
+                "assets/img/whatsapp/img53.jpeg",
+                "assets/img/whatsapp/img54.jpeg"
+              ]
+            },
+            {
+              "id": 22,
+              "name": "Thumb Spica Splint",
+              "category": "Arm & Wrist Supports",
+              "image": "assets/img/whatsapp/img22.jpeg",
+              "description": "Immobilizes the thumb and wrist to aid recovery from sprains or fractures.",
+              "additionalImages": []
+            },
+            {
+              "id": 33,
+              "name": "Wheelchair",
+              "category": "Mobility Aids",
+              "image": "assets/img/whatsapp/img33.jpeg",
+              "description": "Standard manual wheelchair for general mobility assistance.",
+              "additionalImages": [
+                "assets/img/whatsapp/img37.jpeg",
+                "assets/img/whatsapp/img38.jpeg",
+                "assets/img/whatsapp/img39.jpeg",
+                "assets/img/whatsapp/img43.jpeg"
+              ]
+            },
+            {
+              "id": 40,
+              "name": "One Arm Walking Stick",
+              "category": "Mobility Aids",
+              "image": "assets/img/whatsapp/img40.jpeg",
+              "description": "Adjustable walking stick for individuals needing single-arm support.",
+              "additionalImages": [
+                "assets/img/whatsapp/img41.jpeg",
+                "assets/img/whatsapp/img44.jpeg",
+                "assets/img/whatsapp/img45.jpeg"
+              ]
+            },
+            {
+              "id": 48,
+              "name": "Elastic Calf Support",
+              "category": "Other Medical/Hospital Supplies",
+              "image": "assets/img/whatsapp/img48.jpeg",
+              "description": "Provides compression to the calf, aiding muscle recovery and reducing swelling.",
+              "additionalImages": [
+                "assets/img/whatsapp/img50.jpeg"
+              ]
+            },
+            {
+              "id": 42,
+              "name": "Bedside Pan/Toilet",
+              "category": "Other Medical/Hospital Supplies",
+              "image": "assets/img/whatsapp/img42.jpeg",
+              "description": "Convenient bedside toilet solution for patients with limited mobility.",
+              "additionalImages": []
+            },
             // Orthopedic Implants & Instruments
             {
               "id": 1,
               "name": "PFN Recon Nail System",
               "category": "Orthopedic Implants & Instruments",
               "image": "assets/img/live/pfnnails.jpg",
-              "description": "Intramedullary nail system designed for complex proximal femur fractures, offering stable fixation and early mobilization."
+              "description": "Intramedullary nail system designed for complex proximal femur fractures, offering stable fixation and early mobilization.",
+              "additionalImages": [
+                "assets/img/live/pfnnails_angle1.jpg",
+                "assets/img/live/pfnnails_angle2.jpg"
+              ]
             },
             {
               "id": 2,
               "name": "Surgical Screws",
               "category": "Orthopedic Implants & Instruments",
               "image": "assets/img/live/Cannulated-Screws.webp",
-              "description": "Precision-engineered screws used in conjunction with plates or nails for secure internal bone fixation, available in cortical, cancellous, and cannulated types."
+              "description": "Precision-engineered screws used in conjunction with plates or nails for secure internal bone fixation, available in cortical, cancellous, and cannulated types.",
+              "additionalImages": []
             },
             {
               "id": 3,
               "name": "DCP Plate System",
               "category": "Orthopedic Implants & Instruments",
               "image": "assets/img/live/SURGIVAL-DCP-PLATES-SMALL.jpg",
-              "description": "Dynamic Compression Plate system designed to compress fracture fragments for stable healing of long bone fractures."
+              "description": "Dynamic Compression Plate system designed to compress fracture fragments for stable healing of long bone fractures.",
+              "additionalImages": [
+                "assets/img/live/DCP-PLATE-SIDE.jpg",
+                "assets/img/live/DCP-PLATE-CLOSEUP.jpg"
+              ]
             },
             {
               "id": 52,
@@ -835,37 +1410,114 @@
               category: 'Surgical Instruments',
               image: 'assets/img/live/Small-Fragment-Implant-Instrument-Set-GOS1408.jpg',
               description: 'A combined set of implants and instruments tailored for the treatment of small bone fragments.'
-            }
+            },
 
 
-          ]
 
-        }
+
+          ],
+          dynamicWhatsappImages: [], // For images fetched from the server
+
+          // --- Modal specific data properties ---
+          isModalOpen: false,
+          currentProduct: {},
+          currentModalImage: '',
+          currentImageIndex: 0,
+        };
       },
       computed: {
         filteredProducts() {
+          let allProducts = [...this.products, ...this.dynamicWhatsappImages]; // Combine static and dynamic
+
           if (this.selectedCategories.includes('all')) {
-            return this.products;
+            return allProducts;
           }
-          return this.products.filter(product =>
-            this.selectedCategories.includes(product.category)
-          );
-        }
+          return allProducts.filter(product => this.selectedCategories.includes(product.category));
+        },
       },
       methods: {
-        handleAllCategories(event) {
-          if (event.target.checked) {
+        async fetchWhatsappImages() {
+          try {
+            const response = await axios.get('http://localhost:3000/api/whatsapp-images'); // Adjust port if needed
+            const fetchedImageUrls = response.data;
+
+            this.dynamicWhatsappImages = fetchedImageUrls.map((url, index) => ({
+              id: `whatsapp-${index}-${Date.now()}`,
+              name: `WhatsApp Image ${index + 1}`,
+              category: 'WhatsApp Images',
+              image: url,
+              description: 'Automatically added from WhatsApp folder.',
+              additionalImages: [] // Assuming dynamic images don't have alternates unless you enhance your server script
+            }));
+
+            if (this.dynamicWhatsappImages.length > 0 && !this.categories.includes('WhatsApp Images')) {
+              this.categories.push('WhatsApp Images');
+            }
+
+          } catch (error) {
+            console.error('Failed to fetch WhatsApp images:', error);
+          }
+        },
+
+        handleAllCategories() {
+          if (this.selectedCategories.includes('all')) {
+            this.selectedCategories = ['all'];
+          } else {
+            if (this.selectedCategories.length === 0) {
+              this.selectedCategories = ['all'];
+            }
+          }
+        },
+        handleCategoryChange() {
+          if (this.selectedCategories.length > 1 && this.selectedCategories.includes('all')) {
+            this.selectedCategories = this.selectedCategories.filter(category => category !== 'all');
+          }
+          if (this.selectedCategories.length === 0 && !this.selectedCategories.includes('all')) {
             this.selectedCategories = ['all'];
           }
         },
-        handleCategoryChange(event) {
-          if (event.target.checked) {
-            this.selectedCategories = this.selectedCategories.filter(c => c !== 'all');
-          }
-        },
         applyFilters() {
-          // Already handled by computed property
+          console.log("Filters applied:", this.selectedCategories);
+        },
+
+        // --- Modal methods ---
+        openModal(product) {
+          // Combine main image and additional images into one array for easier navigation
+          const allImages = [product.image, ...(product.additionalImages || [])];
+
+          // Assign a copy of the product and the combined image array to currentProduct
+          this.currentProduct = { ...product, allImages: allImages };
+
+          this.currentModalImage = product.image; // Start with the main image
+          this.currentImageIndex = 0; // Reset image index
+
+          this.isModalOpen = true;
+          document.body.style.overflow = 'hidden'; // Prevent scrolling on the background
+        },
+        closeModal() {
+          this.isModalOpen = false;
+          this.currentProduct = {}; // Clear product data
+          this.currentModalImage = ''; // Clear current image
+          this.currentImageIndex = 0; // Reset index
+          document.body.style.overflow = ''; // Restore scrolling
+        },
+        nextImage() {
+          if (!this.currentProduct.allImages || this.currentProduct.allImages.length === 0) return;
+          this.currentImageIndex = (this.currentImageIndex + 1) % this.currentProduct.allImages.length;
+          this.currentModalImage = this.currentProduct.allImages[this.currentImageIndex];
+        },
+        prevImage() {
+          if (!this.currentProduct.allImages || this.currentProduct.allImages.length === 0) return;
+          this.currentImageIndex = (this.currentImageIndex - 1 + this.currentProduct.allImages.length) % this.currentProduct.allImages.length;
+          this.currentModalImage = this.currentProduct.allImages[this.currentImageIndex];
+        },
+        setModalImage(imageSrc, index) {
+          this.currentModalImage = imageSrc;
+          this.currentImageIndex = index;
         }
+      },
+      mounted() {
+        this.fetchWhatsappImages();
       }
     }).mount('#app');
   </script>
